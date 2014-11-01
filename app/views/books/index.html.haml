@@ -1,4 +1,4 @@
 %h1 Library
 %ul
   - @books.each do |book|
-    %li #{author_names(book.authors.map(&:name))} (#{book.year}). <em>#{book_title(book.title)}.</em>
+    %li #{fix_author_names(book.authors.map(&:name))} (#{book.year}). <em>#{fix_book_title(book.title)}.</em>
