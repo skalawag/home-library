@@ -1,5 +1,5 @@
 Fabricator(:book) do
   title { Faker::Lorem.words(3).join(" ") }
-  year { Faker::Number.number(4) }
+  year { rand(999..2016) }
   author_id { rand(Author.all.count) + 1 }
 end
