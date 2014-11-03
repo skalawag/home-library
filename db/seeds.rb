@@ -8,10 +8,10 @@
 
 10.times do
   author = Fabricate(:author)
-  num_of_books = rand(3) + 1
-  num_of_books.times do
-    author.books << Fabricate(:book)
-  end
+  book = Fabricate(:book)
+  text = Text.create(author_id: author.id,
+                     authorable_type: 'Book',
+                     authorable_id: book.id)
 end
 
-Book.first.authors << Author.last
+Text.create(author_id: 5, authorable_type: 'Book', authorable_id: 1)
