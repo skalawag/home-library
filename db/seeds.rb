@@ -9,9 +9,13 @@
 10.times do
   author = Fabricate(:author)
   book = Fabricate(:book)
-  text = Text.create(author_id: author.id,
-                     authorable_type: 'Book',
-                     authorable_id: book.id)
+  article = Fabricate(:article)
+  Text.create(author_id: author.id,
+              authorable_type: 'Book',
+              authorable_id: book.id)
+  Text.create(author_id: author.id,
+              authorable_type: 'Article',
+              authorable_id: article.id)
 end
 
 Text.create(author_id: 5, authorable_type: 'Book', authorable_id: 1)
