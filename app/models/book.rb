@@ -7,4 +7,8 @@ class Book < ActiveRecord::Base
   def authors
     self.texts.map { |text| Author.find(text[:author_id]) }
   end
+
+  def alphabetizer
+    self.authors.first.name.split.last
+  end
 end
