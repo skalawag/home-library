@@ -1,0 +1,7 @@
+= link_to "Add Article"
+= link_to "Home", mylibrary_path
+
+%h1 Articles
+%ul
+  - @articles.each do |article|
+    %li #{fix_author_names(article.authors.map(&:name))}. "#{article.title}"
